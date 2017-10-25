@@ -58,22 +58,21 @@ $adm_page = "forums";
   </head>
 
   <body>
-	  <?php
-	  // Index page
-	  // Load navbar
-	  $smarty->display('styles/templates/' . $template . '/navbar.tpl');
-	  if(Session::exists('adm-alert')){
+	<?php
+	// Forums page
+	// Load navbar
+	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
+	if(Session::exists('adm-alert')){
 		echo Session::flash('adm-alert');
-	  }
-	  ?>
-    <div class="container" >	
+	}
+	?>
+	<div class="container">
 	  <br />
 	  <div class="row">
 		<div class="col-md-3">
 			<?php require('pages/admin/sidebar.php'); ?>
 		</div>
 		<div class="col-md-9">
-        <div class="well">
 		  <ul class="nav nav-pills">
 			<li<?php if(!isset($_GET['view'])){ ?> class="active"<?php } ?>><a href="/admin/forums"><?php echo $admin_language['forums']; ?></a></li>
 			<li<?php if(isset($_GET['view']) && $_GET['view'] == 'labels'){ ?> class="active"<?php } ?>><a href="/admin/forums/?view=labels"><?php echo $admin_language['labels']; ?></a></li>
@@ -142,10 +141,9 @@ $adm_page = "forums";
 							</span>
 						</div>
 					</div>
-					<hr> 
 					<?php 
 					$i++;
-					}
+					if((sizeof($forums)+1) != $i) { echo '<hr>'; } }
 					?>
 
 				</div>
@@ -998,8 +996,6 @@ $adm_page = "forums";
 		  }
 		  ?>
 		</div>
-      </div>
-        </div>
       </div>
     </div>
 	<?php

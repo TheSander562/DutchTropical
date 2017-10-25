@@ -1,11 +1,10 @@
 <?php 
 /*
- *	Made by Partydragen
+ *	Made by Partydragen and Samerton
  *  http://partydragen.com/
  *
- *  and Samerton
- *
  *  License: MIT
+ *  Copyright (c) 2016 Samerton
  */
 
 class BanAppeal {

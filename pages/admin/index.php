@@ -23,11 +23,11 @@ if($user->isLoggedIn()){
 						'username' => array('required' => true, 'isbanned' => true, 'isactive' => true),
 						'password' => array('required' => true)
 					));
-
+					
 					if($validation->passed()) {
 						$user = new User();
 						$login = $user->adminLogin(Input::get('username'), Input::get('password'));
-
+						
 						if($login) {
 							Redirect::to("/admin");
 							die();
@@ -52,34 +52,33 @@ if($user->isLoggedIn()){
     <meta name="author" content="<?php echo $sitename; ?>">
 	<meta name="robots" content="noindex">
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
-
+	
 	<?php
 	// Generate header and navbar content
 	// Page title
 	$title = $admin_language['index'];
-
+	
 	require('core/includes/template/generate.php');
 	?>
-
+	
   </head>
   <body>
-    <section id="admin">
 	<div class="container">
 		<div class="row">
 			<br /><br />
 			<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 				<form role="form" action="" method="post">
-					<center><h2><?php echo $admin_language['re-authenticate']; ?></h2></center><br />
+					<center><h2><?php echo $admin_language['re-authenticate']; ?></h2></center>
 					<?php
 					if(Session::exists('adm_auth_error')){
 						echo Session::flash('adm_auth_error');
 					}
 					?>
 					<div class="form-group">
-						<input type="text" name="username" id="username" autocomplete="off" value="<?php echo htmlspecialchars(Input::get('username')); ?>" class="form-control width" placeholder="<?php echo $user_language['username']; ?>" tabindex="3">
+						<input type="text" name="username" id="username" autocomplete="off" value="<?php echo htmlspecialchars(Input::get('username')); ?>" class="form-control" placeholder="<?php echo $user_language['username']; ?>" tabindex="3">
 					</div>
 					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control width" placeholder="<?php echo $user_language['password']; ?>" tabindex="4">
+						<input type="password" name="password" id="password" class="form-control" placeholder="<?php echo $user_language['password']; ?>" tabindex="4">
 					</div>
 					<div class="row">
 						<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
@@ -92,7 +91,6 @@ if($user->isLoggedIn()){
 			</div>
 		</div>
 	</div>
-</section>
   </body>
 </html>
 <?php
@@ -137,15 +135,15 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
     <meta name="author" content="Samerton">
 	<meta name="robots" content="noindex">
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
-
+	
 	<?php
 	// Generate header and navbar content
 	// Page title
 	$title = $admin_language['index'];
-
+	
 	require('core/includes/template/generate.php');
 	?>
-
+	
 	<!-- Custom style -->
 	<style>
 	html {
@@ -178,16 +176,15 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 		line-height: 1.2em;
 	}
 	</style>
-
+	
   </head>
   <body>
-	  <?php
-	  // Index page
-	  // Load navbar
-	  $smarty->display('styles/templates/' . $template . '/navbar.tpl');
-	  ?>
-      <div class="container">
-
+	<?php
+	// Index page
+	// Load navbar
+	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
+	?>
+    <div class="container">
 	  <br />
 	  <div class="row">
 	    <div class="col-md-3">
@@ -206,9 +203,9 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 			<strong>Running PHP <?php echo phpversion(); ?></strong> <a href="/admin/phpinfo" target="_blank">(Full PHP information)</a><br />
 			<h3><?php echo $admin_language['statistics']; ?></h3>
 			<strong><?php echo $admin_language['registrations_per_day']; ?></strong>
-
+			
 			<canvas id="registrationChart" width="100%" height="40"></canvas>
-
+			
 			<h3>Banner</h3>
 			<img src="/core/integration/banner/banner.png"><br />
 			URL: <code>http://<?php echo $_SERVER['SERVER_NAME']; ?>/core/integration/banner/banner.png</code>
@@ -220,21 +217,21 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 	// Footer
 	require('core/includes/template/footer.php');
 	$smarty->display('styles/templates/' . $template . '/footer.tpl');
-
-	// Scripts
+	
+	// Scripts 
 	require('core/includes/template/scripts.php');
 	?>
 
 	<script src="<?php echo PATH; ?>core/assets/js/moment.js"></script>
 	<script src="<?php echo PATH; ?>core/assets/js/charts/Chart.min.js"></script>
-
+	
 	<?php
 	// Get data for members statistics graph
 	$latest_members = $queries->orderWhere('users', 'joined > ' . strtotime("-1 week"), 'joined', 'ASC');
 
 	// Output array
 	$output = array();
-
+	
 	foreach($latest_members as $member){
 		// Turn into format for graph
 		// First, order them per day
@@ -247,7 +244,7 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 			$output[$date] = 1;
 		}
 	}
-
+	
 	// Fill in missing dates, set registrations to 0
 	$start = strtotime("-1 week");
 	$start = date('d M Y', $start);
@@ -259,10 +256,10 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 		}
 		$start = $start + 86400;
 	}
-
+	
 	// Sort by date
 	ksort($output);
-
+	
 	// Turn into string for graph
 	$labels = '';
 	$registration_data = '';
@@ -273,7 +270,7 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 	$labels = '[' . rtrim($labels, ', ') . ']';
 	$registration_data = '[' . rtrim($registration_data, ', ') . ']';
 	?>
-
+	
 	<script type="text/javascript">
 	$(document).ready(function() {
 		var ctx = $("#registrationChart").get(0).getContext("2d");
@@ -292,7 +289,7 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 				}
 			]
 		}
-
+		
 		var registrationLineChart = new Chart(ctx, {
 			type: 'line',
 			data: data

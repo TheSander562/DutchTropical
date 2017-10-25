@@ -1,4 +1,4 @@
-<?php
+<?php 
 /*
  *  Made by Sander Jochems
  *  http://www.sanderjochems.nl
@@ -12,16 +12,16 @@
  *  http://minevibes.com
  *
  *  Updated by Sander Lambrechts
- *
+ *  
  *  Dutch Language
  */
-
+  
 /*
  *  Admin Panel
  */
 $admin_language = array(
     // General terms
-    'admin_cp' => 'AdminCP',
+    'admin_cp' => 'AdminCP', 
     'infractions' => 'Straffen',
     'invalid_token' => 'Ongeldige token, probeer het opnieuw',
     'invalid_action' => 'Ongeldige Actie',
@@ -31,10 +31,10 @@ $admin_language = array(
     'edit' => 'Bewerk',
     'actions' => 'Acties',
     'task_successful' => 'Opdracht uitgevoerd',
-
+     
     // Admin login
     're-authenticate' => 'Log opnieuw in',
-
+     
     // Admin sidebar
     'index' => 'Overzicht',
     'announcements' => 'Aankondigingen',
@@ -49,10 +49,10 @@ $admin_language = array(
     'update' => 'Update',
     'misc' => 'Overig',
     'help' => 'Help',
-
+     
     // Admin index page
     'statistics' => 'Statistieken',
-    'registrations_per_day' => 'Registraties per dag (7 dagen geleden)',
+    'registrations_per_day' => 'Registraties per dag (Tot wel 7 dagen terug)',
 
     // Admin announcements page
     'current_announcements' => 'Huidige Aankondigingen',
@@ -82,7 +82,7 @@ $admin_language = array(
     'module_disabled' => 'Module uitgeschakeld.',
     'site_name' => 'Site Naam',
     'language' => 'Taal',
-    'voice_server_not_writable' => '"core/voice_server.php" is niet beschrijfbaar. Controleer de bestandsrechten (777).',
+    'voice_server_not_writable' => '"core/voice_server.php" is niet beschrijfbaar. Controleer de bestandsrechten (chmod 777). ',
     'email' => 'Email',
     'incoming_email' => 'Inkomend email adres',
     'outgoing_email' => 'Uitgaand email adres',
@@ -124,8 +124,8 @@ $admin_language = array(
     'discord_id' => 'Discord Server ID',
     'voice_server_help' => 'Voer de gebruikersgegevens in voor de ServerQuery.',
     'ip_without_port' => 'IP (Zonder poort)',
-    'voice_server_port' => 'Poort (Standaard 10011)',
-    'virtual_port' => 'Virtuele Poort (Standaard 9987)',
+    'voice_server_port' => 'Poort (Normaal is de poort 10011)',
+    'virtual_port' => 'Virtuele Poort (Normaal is de poort 9987)',
     'permissions' => 'Rechten:',
     'view_applications' => 'Bekijk Aanvragen?',
     'accept_reject_applications' => 'Accepteer/Weiger Aanvragen?',
@@ -142,9 +142,15 @@ $admin_language = array(
     'text' => 'Tekstlijn',
     'textarea' => 'Tekstblok',
     'question_deleted' => 'Vraag verwijderd',
+	'name_required' => 'Naam is verplicht.',
+	'question_required' => 'Vraag is verplicht.',
+	'name_minimum' => 'Naam moet uit miniamaal 2 karakters bestaan.',
+	'question_minimum' => 'Vraag moet uit miniamaal 2 karakters bestaan.',
+	'name_maximum' => 'Naam moet uit maximaal 16 karakters bestaan.',
+	'question_maximum' => 'Vraag moet uit maximaal 16 karakters bestaan.',
     'use_followers' => 'Gebruik volgers?',
     'use_followers_help' => 'Als dit is uitgeschakeld dan wordt het vrienden systeem ingeschakeld',
-
+     
     // Admin custom pages page
     'click_on_page_to_edit' => 'Klik op een pagina om deze te bewerken.',
     'page' => 'Pagina:',
@@ -205,9 +211,9 @@ $admin_language = array(
     'has_no_parent' => 'Heeft geen subforum',
     'forum_permissions' => 'Forum Rechten',
     'can_view_forum' => 'Kan forum bekijken',
-    'can_create_topic' => 'Kan een topic maken',
+    'can_create_topic' => 'Kan een onderwerp maken',
     'can_post_reply' => 'Kan een antwoord plaatsen',
-    'display_threads_as_news' => 'Vertoon topics als nieuws op de voorpagina?',
+    'display_threads_as_news' => 'Vertoon onderwerpen als nieuws op de voorpagina?',
     'input_forum_title' => 'Vul een forum titel in.',
     'input_forum_description' => 'Vul een forum beschrijving in (HTML codes mogen worden gebruikt).',
     'forum_name_minimum' => 'De forum naam moet minstens uit 2 tekens bestaan.',
@@ -262,7 +268,7 @@ $admin_language = array(
     'uuid_max_32' => 'De UUID kan uit niet meer dan 32 tekens bestaan.',
     'cant_delete_root_user' => 'De administrator kan niet verwijderd worden!',
     'cant_modify_root_user' => 'Je kan de groep van de administrator niet bewerken!',
-
+     
     // Admin Minecraft page
     'minecraft_settings' => 'Minecraft Instellingen',
     'use_plugin' => 'Gebruik Nameless Minecraft plugin?',
@@ -292,7 +298,7 @@ $admin_language = array(
     'show_players' => 'Laat de spelers op de Play pagina zien.',
     'server_edited' => 'Server succesvol bewerkt',
     'server_created' => 'Server succesvol gemaakt',
-    'query_errors' => 'Query Errors',
+    'query_errors' => 'Query fouten',
     'query_errors_info' => 'De volgende fouten kun je gebruiken om fouten met de interne server query op te lossen.',
     'no_query_errors' => 'Geen query fouten gevonden',
     'date' => 'Datum:',
@@ -316,8 +322,9 @@ $admin_language = array(
     'mcassoc_key' => 'mcassoc Gedeelde Sleutel',
     'invalid_mcassoc_key' => 'Ongeldige mcassoc sleutel.',
     'mcassoc_instance' => 'mcassoc Instance',
-    'mcassoc_instance_help' => 'Generate an instance code <a href="http://jsbin.com/jadofehoqu/1/" target="_blank">here</a>',
-    'mcassoc_key_help' => 'Get your mcassoc key <a href="https://mcassoc.lukegb.com/" target="_blank">here</a>',
+    'mcassoc_instance_help' => 'Genereer een instance code <a href="http://jsbin.com/jadofehoqu/1/" target="_blank">hier</a>',
+    'mcassoc_key_help' => 'Verkrijg je mcassoc sleutel <a href="https://mcassoc.lukegb.com/" target="_blank">hier</a>',
+    'enable_name_history' => 'Schakel profiel gebruikersnaam geschiedenis is?',
 
     // Admin Themes, Templates and Addons
     'themes' => 'Thema\'s',
@@ -335,35 +342,36 @@ $admin_language = array(
     'activate' => 'Activeer',
     'deactivate' => 'Deactiveer',
     'theme_install_instructions' => 'Upload thema\'s naar de <b>styles/themes</b> map, Klik daarna op de "Scan" knop.',
-    'template_install_instructions' => 'Upload templates naar de <b>styles/templates</b> map, Klik daarna op de "Scan" knop.',
+    'template_install_instructions' => 'Upload sjablonen naar de <b>styles/templates</b> map, Klik daarna op de "Scan" knop.',
     'addon_install_instructions' => 'Upload addons naar de <b>addons</b> map, Klik daarna op de "Scan" knop.',
     'addon_install_warning' => 'Addons worden geïnstalleerd op uw eigen risico. Maak een back-up van uw bestanden en de database voordat u verder gaat',
     'scan' => 'Zoek',
     'theme_not_exist' => 'Dat thema bestaat niet',
-    'template_not_exist' => 'Dat template bestaat niet',
+    'template_not_exist' => 'Dat sjabloon bestaat niet',
     'addon_not_exist' => 'Die addon bestaat niet',
     'style_scan_complete' => 'Klaar, alle nieuwe stijlen zijn geïnstalleerd.',
     'addon_scan_complete' => 'Klaar, alle nieuwe addons zijn geïnstalleerd.',
-    'theme_enabled' => 'Thema Ingeschakeld.',
-    'template_enabled' => 'Template Uitgeschakeld.',
-    'addon_enabled' => 'Addon Ingeschakeld.',
-    'theme_deleted' => 'Thema Verwijderd.',
-    'template_deleted' => 'Template Verwijderd.',
-    'addon_disabled' => 'Addon Uitgeschakeld.',
-    'inverse_navbar' => 'Inverse Navbar',
+    'theme_enabled' => 'Thema ingeschakeld.',
+    'template_enabled' => 'Sjabloon uitgeschakeld.',
+    'addon_enabled' => 'Addon ingeschakeld.',
+    'theme_deleted' => 'Thema verwijderd.',
+    'template_deleted' => 'Sjabloon verwijderd.',
+    'addon_disabled' => 'Addon uitgeschakeld.',
+    'inverse_navbar' => 'Omgekeerde kleur Navbar',
     'confirm_theme_deletion' => 'Weet je het zeker dat je thema <b>{x}</b> wil verwijderen?<br /><br />Het thema wordt verwijderd uit de <b>styles/themes</b> map.', // Don't replace {x}
-    'confirm_template_deletion' => 'Weet je zeker dat je de template <b>{x}</b> wil verwijderen?<br /><br />Het template wordt verwijderd uit de <b>styles/templates</b> map.', // Don't replace {x}
-
+    'confirm_template_deletion' => 'Weet je zeker dat je het sjabloon <b>{x}</b> wilt verwijderen?<br /><br />Het sjabloon wordt verwijderd uit de <b>styles/templates</b> map.', // Don't replace {x}
+    'unable_to_enable_addon' => 'Kan addon niet inschakelen. Zorg ervoor dat het een geldige NamelessMC addon is.',
+	
     // Admin Misc page
     'other_settings' => 'Andere Instellingen',
-    'enable_error_reporting' => 'Inschakelen error rapportage?',
+    'enable_error_reporting' => 'Probleem rapportage inschakelen?',
     'error_reporting_description' => 'Dit mag alleen worden gebruikt voor het opsporen van fouten, het is aanbevolen dit als uitgeschakeld te laten staan.',
     'display_page_load_time' => 'Toon pagina laadtijd?',
     'page_load_time_description' => 'Nadat deze is ingeschakeld zal een snelheidsmeter weergegeven in de voettekst die de laadtijd van de pagina weergeeft. (Dit is aan de onderkant van de pagina bij de copyright.)',
     'reset_website' => 'Reset Website',
     'reset_website_info' => 'Deze knop zal je website resetten <b>Addons worden uitgeschakeld, maar niet verwijderd uit de database en addons map, en de instellingen worden niet veranderd.</b> Ingestelde Minecraft servers blijven behouden',
     'confirm_reset_website' => 'Weet je zeker dat je je website wilt resetten?',
-
+	
     // Admin Update page
     'installation_up_to_date' => 'Je installatie is up to date',
     'update_check_error' => 'Helaas konden we niet controleren of er updates zijn. Probeer het later nog eens.',
@@ -373,7 +381,7 @@ $admin_language = array(
     'download' => 'Download',
     'update_warning' => 'Waarschuwing: Kijk even dubbel of je de zip hebt gedownloadet en de bestanden daarvan hebt geupload, voordat je de update start!'
 );
-
+ 
 /*
  *  Navbar
  */
@@ -386,14 +394,14 @@ $navbar_language = array(
     'staff_apps' => 'Staff Sollicitaties',
     'view_messages' => 'Bekijk Berichten',
     'view_alerts' => 'Bekijk Meldingen',
-
+    
     // Icons - will display before the text
     'home_icon' => '',
     'play_icon' => '',
     'forum_icon' => '',
     'staff_apps_icon' => ''
 );
-
+ 
 /*
  * User Related
  */
@@ -456,7 +464,8 @@ $user_language = array(
     'verify_account_help' => 'Volg de stappen zodat wij kunnen zien of u eigenaar bent van het account',
     'verification_failed' => 'Verificatie mislukt. Probeer a.u.b. Opnieuw',
     'verification_success' => 'Verificatie gelukt! Je kan nu inloggen.',
-    'complete_signup' => 'Complete aanmelding',
+    'complete_signup' => 'Voltooi de aanmelding',
+    'registration_disabled' => 'Website aanmeldingen zijn uitgeschakeld.',
 
     // UserCP
     'user_cp' => 'UserCP',
@@ -464,8 +473,8 @@ $user_language = array(
     'private_messages' => 'Prive berichten',
     'profile_settings' => 'Profiel Instellingen',
     'your_profile' => 'Mijn Profiel',
-    'topics' => 'Topics',
-    'posts' => 'Posts',
+    'topics' => 'Onderwerpen',
+    'posts' => 'Berichten',
     'reputation' => 'Reputatie',
     'friends' => 'Vrienden',
     'alerts' => 'Meldingen',
@@ -511,11 +520,11 @@ $user_language = array(
     'tfa_email_contents' => 'Er is  een login poging gemaakt tot je account. Als je dit bent, vul dan de volgende code in als dat word gevraagd. Als je dit niet bent dan kan je de email negeren, hoe dan ook een wachtwoord reset word aangeraden. De code is voor 10 minuten geldig.',
 
     // Alerts
-    'viewing_unread_alerts' => 'Bekijk ongelezen alerts. Verander naar <a href="/user/alerts/?view=read"><span class="label label-success">gelezen</span></a>.',
-    'viewing_read_alerts' => 'Bekijk gelezen alerts. Verander naar <a href="/user/alerts/"><span class="label label-warning">ongelezen</span></a>.',
-    'no_unread_alerts' => 'Je heeft geen ongelezen alerts.',
-    'no_alerts' => 'Geen alerts',
-    'no_read_alerts' => 'Je heeft geen gelezen alerts.',
+    'viewing_unread_alerts' => 'Bekijk ongelezen meldingen. Verander naar <a href="/user/alerts/?view=read"><span class="label label-success">gelezen</span></a>.',
+    'viewing_read_alerts' => 'Bekijk gelezen meldingen. Verander naar <a href="/user/alerts/"><span class="label label-warning">ongelezen</span></a>.',
+    'no_unread_alerts' => 'Je hebt geen ongelezen meldingen.',
+    'no_alerts' => 'Geen meldingen',
+    'no_read_alerts' => 'Je heeft geen gelezen meldingen.',
     'view' => 'Bekijk',
     'alert' => 'Alert',
     'when' => 'Wanneer',
@@ -524,11 +533,11 @@ $user_language = array(
     'tagged_in_post' => 'Je bent getagd in een post',
     'report' => 'Rapporteer',
     'deleted_alert' => 'Melding is succesvol verwijderd',
-
+     
     // Warnings
-    'you_have_received_a_warning' => 'Je heeft een waarschuwing van {x} op {y} ontvangen.', // Don't replace "{x}" or "{y}"
+    'you_have_received_a_warning' => 'Je hebt een waarschuwing ontvangen van {x} op {y}.', // Don't replace "{x}" or "{y}"
     'acknowledge' => 'Dit Klopt',
-
+     
     // Forgot password
     'password_reset' => 'Wachtwoord Reset',
     'email_body' => 'Je ontvangt deze e-mail omdat je om een wachtwoord reset hebt gevraagd. Om je wachtwoord te resetten, gebruik de volgende link:', // Body for the password reset email
@@ -537,14 +546,14 @@ $user_language = array(
     'username_not_found' => 'Die gebruikersnaam bestaat niet.',
     'change_password' => 'Verander Wachtwoord',
     'your_password_has_been_changed' => 'Je wachtwoord is succesvol gewijzigd.',
-
+     
     // Profile page
     'profile' => 'Profiel',
     'player' => 'Spelers',
     'offline' => 'Offline',
     'online' => 'Online',
     'pf_registered' => 'Geregistreerd:',
-    'pf_posts' => 'Posts:',
+    'pf_posts' => 'Berichten:',
     'pf_reputation' => 'Reputatie:',
     'user_hasnt_registered' => 'Deze gebruiker heeft nog niet geregistreerd op onze website',
     'user_no_friends' => 'Deze gebruiker heeft geen vrienden toegevoegd',
@@ -563,7 +572,7 @@ $user_language = array(
     'write_on_own_profile' => 'Plaats iets op je profiel...',
     'profile_posts' => 'Profiel Berichten.',
     'no_profile_posts' => 'Er zijn nog geen profiel berichten.',
-    'invalid_wall_post' => 'Ongeldige profiel post. Zorg ervoor dat je post tussen de 2 en 2048 tekens is.',
+    'invalid_wall_post' => 'Ongeldig profiel bericht. Zorg ervoor dat je bericht tussen de 2 en 2048 tekens is.',
     'about' => 'Over',
     'reply' => 'Antwoord',
     'x_likes' => '{x} vind-ik-leuks', // Don't replace {x}
@@ -575,7 +584,7 @@ $user_language = array(
     'last_5_posts' => 'Recentste 5 berichten',
     'follow' => 'Volg',
     'unfollow' => 'Ontvolgen',
-    'name_history' => 'Naamsgeschiedenis',
+    'name_history' => 'Naamgeschiedenis',
     'changed_name_to' => 'Veranderd naar: {x} op {y}', // Don't replace {x} or {y}
     'original_name' => 'Originele naam:',
     'name_history_error' => 'Het systeem kan geen naamverandering geschiedenis vinden.',
@@ -588,7 +597,7 @@ $user_language = array(
     'application_accepted' => 'Je staff aanvraag is geaccepteerd, gefeliciteerd!',
     'application_rejected' => 'Je staff aanvraag is afgewezen.'
 );
-
+ 
 /*
  *  Moderation related
  */
@@ -598,7 +607,7 @@ $mod_language = array(
     'reports' => 'Rapporten',
     'punishments' => 'Straffen',
     'staff_applications' => 'Solliciteren voor staff',
-
+     
     // Punishments
     'ban' => 'Ban',
     'unban' => 'Unban',
@@ -609,45 +618,45 @@ $mod_language = array(
     'registered' => 'Geregistreerd',
     'reason' => 'Reden:',
     'cant_ban_root_user' => 'Je kan de administrator niet straffen!',
-    'invalid_reason' => 'Maak een goede reden tussen de 2 en 256 tekens lang.',
+    'invalid_reason' => 'Vul een goede reden in tussen de 2 en 256 tekens lang.',
     'punished_successfully' => 'Straf succesvol toegevoegd.',
 
     // Reports
-    'report_closed' => 'Report Gesloten.',
-    'new_comment' => 'Nieuw Commentaar',
+    'report_closed' => 'Rapport gesloten.',
+    'new_comment' => 'Nieuw commentaar',
     'comments' => 'Commentaar',
     'only_viewed_by_staff' => 'Kan alleen worden bekeken door staff',
     'reported_by' => 'Gerapporteerd door',
     'close_issue' => 'Sluit rapport',
     'report' => 'Report:',
     'view_reported_content' => 'Bekijk gemelde inhoud',
-    'no_open_reports' => 'Geen open reports',
-    'user_reported' => 'Speler Gerapporteerd',
+    'no_open_reports' => 'Geen open rapporten',
+    'user_reported' => 'Speler gerapporteerd',
     'type' => 'Type',
-    'updated_by' => 'Bijgewerkt Door',
-    'forum_post' => 'Forum Post',
-    'user_profile' => 'Gebruikers Profiel',
-    'comment_added' => 'Comment added.',
-    'new_report_submitted_alert' => 'Nieuw report ingediend door {x} over {y}', // Don't replace "{x}" or "{y}"
-    'ingame_report' => 'Ingame Report',
+    'updated_by' => 'Bijgewerkt door',
+    'forum_post' => 'Forum post',
+    'user_profile' => 'Gebruikers profiel',
+    'comment_added' => 'Commentaar toegevoegd.',
+    'new_report_submitted_alert' => 'Nieuw rapport ingediend door {x} over {y}', // Don't replace "{x}" or "{y}"
+    'ingame_report' => 'In-game rapport',
 
     // Staff applications
-    'comment_error' => 'Zorg ervoor dat uw comment tussen de 2 en 2048 tekens lang is.',
-    'viewing_open_applications' => 'Bekijk <span class="label label-info">open</span> applications. Verander naar <a href="/mod/applications/?view=accepted"><span class="label label-success">Geaccepted</span></a> or <a href="/mod/applications/?view=declined"><span class="label label-danger">Afgewezen</span></a>.',
-    'viewing_accepted_applications' => 'Bekijk <span class="label label-success">geaccepteerd</span> applications. Verander naar <a href="/mod/applications/"><span class="label label-info">open</span></a> or <a href="/mod/applications/?view=declined"><span class="label label-danger">Afgewezen</span></a>.',
-    'viewing_declined_applications' => 'Bekijk <span class="label label-danger">afgewezen</span> applications. Verander naar <a href="/mod/applications/"><span class="label label-info">open</span></a> or <a href="/mod/applications/?view=accepted"><span class="label label-success">Geaccepted</span></a>.',
+    'comment_error' => 'Zorg ervoor dat uw commentaar tussen de 2 en 2048 tekens lang is.',
+    'viewing_open_applications' => 'Bekijk <span class="label label-info">open</span> applicaties. Verander naar <a href="/mod/applications/?view=accepted"><span class="label label-success">Geaccepteerde</span></a> of <a href="/mod/applications/?view=declined"><span class="label label-danger">Afgewezen</span></a>.',
+    'viewing_accepted_applications' => 'Bekijk <span class="label label-success">geaccepteerde</span> applications. Verander naar <a href="/mod/applications/"><span class="label label-info">open</span></a> of <a href="/mod/applications/?view=declined"><span class="label label-danger">Afgewezen</span></a>.',
+    'viewing_declined_applications' => 'Bekijk <span class="label label-danger">afgewezen</span> applications. Verander naar <a href="/mod/applications/"><span class="label label-info">open</span></a> of <a href="/mod/applications/?view=accepted"><span class="label label-success">Geaccepteerde</span></a>.',
     'time_applied' => 'Tijd Toegepast',
-    'no_applications' => 'Geen applications in deze categorie',
-    'viewing_app_from' => 'Bekijk application van {x}', // Don't replace "{x}"
+    'no_applications' => 'Geen applicaties in deze categorie',
+    'viewing_app_from' => 'Bekijk applicatie van {x}', // Don't replace "{x}"
     'open' => 'Open',
-    'accepted' => 'Geaccepted',
+    'accepted' => 'Geaccepteerd',
     'declined' => 'Afgewezen',
     'accept' => 'Accepteer',
     'decline' => 'Afwijzen',
     'new_app_submitted_alert' => 'Nieuwe applicatie ingediend door {x}' // Don't replace "{x}"
 );
-
-/*
+ 
+/* 
  *  General
  */
 $general_language = array(
@@ -660,7 +669,7 @@ $general_language = array(
     'submit' => 'Verstuur',
     'close' => 'Sluiten',
     'cookie_message' => '<strong>Deze website maakt gebruik van cookies om je ervaring te verbeteren.</strong><p>Door op deze website te blijven accepteer je deze.</p>',
-    'theme_not_exist' => 'Het geselecteerde thema bestaat niet.',
+    'theme_not_exist' => 'Het geselecteerde thema bestaat niet (meer).',
     'confirm' => 'Bevestigen',
     'cancel' => 'Annuleer',
     'guest' => 'Gast',
@@ -673,7 +682,7 @@ $general_language = array(
     'view' => 'Bekijk',
     'info' => 'Info',
     'next' => 'Volgende',
-
+     
     // Play page
     'connect_with' => 'Server IP: <b>{x}<b>', // Don't replace {x}
     'online' => 'Online',
@@ -684,14 +693,14 @@ $general_language = array(
     'server_status' => 'Server Status',
     'no_players_online' => 'Er zijn geen spelers online!',
     'x_players_online' => 'Er zijn {x} spelers online.', // Don't replace {x}
-
+     
     // Other
     'page_loaded_in' => 'Pagina geladen in {x} seconden', // Don't replace {x}; 's' stands for 'seconds'
     'none' => 'Geen',
-    '404' => 'Sorry, we konden deze pagina niet vinden. Weet je zeker dat je de URL correct heeft gespeld?'
+    '404' => 'Sorry, we kunnen de pagina niet vinden die je probeert te bezoeken. Controleer de URL en probeer het opnieuw, als het nog niet lukt neem dan contact op met de Administrator'
 );
-
-/*
+ 
+/* 
  *  Forum
  */
 $forum_language = array(
@@ -704,33 +713,33 @@ $forum_language = array(
     'by' => 'door',
     'in' => 'in',
     'views' => 'bekeken',
-    'posts' => 'posts',
-    'topics' => 'topics',
-    'topic' => 'topic',
+    'posts' => 'berichten',
+    'topics' => 'onderwerpen',
+    'topic' => 'onderwerp',
     'statistics' => 'Statistieken',
     'overview' => 'Overzicht',
     'latest_discussions' => 'Nieuwste Discussies',
-    'latest_posts' => 'Laatste Posts',
+    'latest_posts' => 'Laatste berichten',
     'users_registered' => 'Gebruikers Geregistreerd:',
     'latest_member' => 'Nieuwste Gebruiker:',
     'forum' => 'Forum',
-    'last_post' => 'Laatste Post',
-    'no_topics' => 'Nog geen topics hier',
-    'new_topic' => 'Nieuw Topic',
+    'last_post' => 'Laatste bericht',
+    'no_topics' => 'Nog geen onderwerpen hier',
+    'new_topic' => 'Nieuw onderwerp',
     'subforums' => 'Subforums:',
-
+     
     // View topic view
     'home' => 'Home',
-    'topic_locked' => 'Topic Gesloten',
-    'new_reply' => 'Nieuwe Antwoord',
-    'mod_actions' => 'Mod Acties',
-    'lock_thread' => 'Sluit Topic',
-    'unlock_thread' => 'Ontgrendel topic',
-    'merge_thread' => 'Voeg een topic samen',
-    'delete_thread' => 'Verwijder topic',
-    'confirm_thread_deletion' => 'Weet je zeker dat je dit topic wilt verwijderen?',
-    'move_thread' => 'Verplaats topic',
-    'sticky_thread' => 'Sticky topic',
+    'topic_locked' => 'Onderwerp gesloten',
+    'new_reply' => 'Nieuw antwoord',
+    'mod_actions' => 'Mod acties',
+    'lock_thread' => 'Sluit onderwerp',
+    'unlock_thread' => 'Ontgrendel onderwerp',
+    'merge_thread' => 'Voeg een onderwerp samen',
+    'delete_thread' => 'Verwijder onderwerp',
+    'confirm_thread_deletion' => 'Weet je zeker dat je dit onderwerp wilt verwijderen?',
+    'move_thread' => 'Verplaats onderwerp',
+    'sticky_thread' => 'Sticky onderwerp',
     'report_post' => 'Rapporteer bericht',
     'quote_post' => 'Citeer bericht',
     'delete_post' => 'Verwijder bericht',
@@ -742,42 +751,42 @@ $forum_language = array(
     'post_reputation' => 'Post Reputatie',
     'no_reputation' => 'Er zijn nog geen reputaties voor deze post',
     're' => 'RE:',
-
+     
     // Create post view
-    'create_post' => 'Maak Post',
-    'post_submitted' => 'Post Geplaatst',
-    'creating_post_in' => 'Maak post in: ',
-    'topic_locked_permission_post' => 'Dit onderwerp is gesloten, maar je kan nog posten',
-
+    'create_post' => 'Maak bericht',
+    'post_submitted' => 'Bericht  geplaatst',
+    'creating_post_in' => 'Maak bericht in: ',
+    'topic_locked_permission_post' => 'Dit onderwerp is gesloten, maar je kan nog een bericht plaatsen',
+     
     // Edit post view
-    'editing_post' => 'Post Bewerken',
-
+    'editing_post' => 'Bericht bewerken',
+     
     // Sticky threads
-    'thread_is_' => 'Topic is ',
-    'now_sticky' => 'Is nu een plakkerige topic',
-    'no_longer_sticky' => 'Is niet langer meer een plakkerige topic',
-
+    'thread_is_' => 'Onderwerp is ',
+    'now_sticky' => 'Is nu een plakkerige onderwerp',
+    'no_longer_sticky' => 'Is niet langer meer een plakkerige onderwerp',
+     
     // Create topic
-    'topic_created' => 'Topic Gemaakt.',
-    'creating_topic_in_' => 'Maak topic in forum ',
-    'thread_title' => 'Thread Titel',
+    'topic_created' => 'Onderwerp gemaakt.',
+    'creating_topic_in_' => 'Maak onderwerp in forum ',
+    'thread_title' => 'Onderwerp Titel',
     'confirm_cancellation' => 'Weet je het zeker?',
     'label' => 'Label',
-
+     
     // Reports
-    'report_submitted' => 'Report ingediend.',
-    'view_post_content' => 'Bekijk post inhoud',
-    'report_reason' => 'Report Reden',
-
+    'report_submitted' => 'Rapport ingediend.',
+    'view_post_content' => 'Bekijk bericht inhoud',
+    'report_reason' => 'Rapport Reden',
+     
     // Move thread
     'move_to' => 'Verplaats naar:',
-
+     
     // Merge threads
-    'merge_instructions' => 'De thread <strong>moet</strong> binnen hetzelfde forum zijn. Het verplaatsen van het topic is nodig.',
+    'merge_instructions' => 'Het onderwerp <strong>moet</strong> binnen hetzelfde forum zijn. Het verplaatsen van het onderwerp is nodig.',
     'merge_with' => 'Samenvoegen met:',
-
+     
     // Other
-    'forum_error' => 'Sorry, we konden dat forum of topic niet vinden.',
+    'forum_error' => 'Sorry, we konden dat forum of onderwerp niet vinden.',
     'are_you_logged_in' => 'Ben je ingelogd?',
     'online_users' => 'Gebruikers Online',
     'no_users_online' => 'Er zijn geen gebruikers online.',
@@ -785,13 +794,13 @@ $forum_language = array(
     // Search
     'search_error' => 'Voer een zoekopdracht in die tussen 1 en 32 tekens lang is.',
     'no_search_results' => 'Je zoekopdracht heeft niks opgeleverd.',
-
+    
     //Share on a social-media.
    'sm-share' => 'Delen',
    'sm-share-facebook' => 'Deel op Facebook',
    'sm-share-twitter' => 'Deel op Twitter',
 );
-
+ 
 /*
  *  Emails
  */
@@ -801,7 +810,7 @@ $email_language = array(
     'message' => 'Bedankt voor het registreren! Om de registratie te voltooien, klikt je op de volgende link:',
     'thanks' => 'Bedankt,'
 );
-
+ 
 /*
  *  Time language, eg "1 minute ago"
  *  DON'T replace "{x}" in any translations
@@ -820,7 +829,7 @@ $time_language = array(
     'about_1_year' => 'ongeveer 1 jaar geleden',
     'over_x_years' => '{x} jaren geleden'
 );
-
+  
 /*
  *  Table language; used for "DataTables" Javascript tables
  */
@@ -836,7 +845,7 @@ $table_language = array(
  *  API language
  */
 $api_language = array(
-	'register' => 'Registratie afronden'
+	'register' => 'Registratie voltooien'
 );
-
+  
 ?>

@@ -140,6 +140,12 @@ $admin_language = array(
 	'text' => 'Texto',
 	'textarea' => 'Área de texto',
 	'question_deleted' => 'Pregunta borrada',
+	'name_required' => 'Name is required.',
+	'question_required' => 'Question is required.',
+	'name_minimum' => 'Name must be a minimum of 2 characters.',
+	'question_minimum' => 'Question must be a minimum of 2 characters.',
+	'name_maximum' => 'Name must be a maximum of 16 characters.',
+	'question_maximum' => 'Question must be a maximum of 16 characters.',
 	'use_followers' => '¿Utilizar seguidores?',
 	'use_followers_help' => 'Si esta desactivado, el sistema de amigos será utilizado.',
 	
@@ -169,6 +175,7 @@ $admin_language = array(
 	'can_view_page' => 'Puede ver la pagina:',
 	'redirect_page' => '¿Página redirigida?',
 	'redirect_link' => 'Link de redirección',
+	'page_icon' => 'Page Icon',
 	
 	// Admin forum page
 	'labels' => 'Etiquetas de tema',
@@ -305,16 +312,17 @@ $admin_language = array(
 	'server_ip_maximum' => 'La IP del servidor debe tener un máximo de 64 caracteres.',
 	'purge_errors' => 'Arreglar Errores',
 	'confirm_purge_errors' => '¿Está seguro de que desea limpiar todos los errores?',
-	'avatar_type' => 'Avatar type',
-	'custom_usernames' => 'Force Minecraft usernames?',
+	'avatar_type' => 'Tipo de Avatar',
+	'custom_usernames' => '¿Forzar Uso de Nombre de Minecraft?',
 	'mcassoc' => 'mcassoc',
-	'use_mcassoc' => 'Use mcassoc?',
+	'use_mcassoc' => '¿Usar mcassoc?',
 	'use_mcassoc_help' => 'mcassoc ensures users own the Minecraft account they\'re registering with',
-	'mcassoc_key' => 'mcassoc Shared Key',
-	'invalid_mcassoc_key' => 'Invalid mcassoc key.',
-	'mcassoc_instance' => 'mcassoc Instance',
-	'mcassoc_instance_help' => 'Generate an instance code <a href="http://jsbin.com/jadofehoqu/1/" target="_blank">here</a>',
-	'mcassoc_key_help' => 'Get your mcassoc key <a href="https://mcassoc.lukegb.com/" target="_blank">here</a>',
+	'mcassoc_key' => 'Llave Compartida de mcassoc',
+	'invalid_mcassoc_key' => 'Llave de mcassoc Incorrecta.',
+	'mcassoc_instance' => 'Instancia de mcassoc',
+	'mcassoc_instance_help' => 'Genera tu Codigo de Instancia <a href="http://jsbin.com/jadofehoqu/1/" target="_blank">aquí</a>.',
+	'mcassoc_key_help' => 'Obtén tu Llave de mcassoc <a href="https://mcassoc.lukegb.com/" target="_blank">aquí</a>.',
+	'enable_name_history' => 'Enable profile username history?',
 	
 	// Admin Themes, Templates and Addons
 	'themes' => 'Temas',
@@ -350,6 +358,7 @@ $admin_language = array(
 	'inverse_navbar' => 'Barra de navegación inversa',
 	'confirm_theme_deletion' => '¿Seguro que desea borrar el tema <strong>{x}</strong>?<br /><br />El tema se eliminará de su directorio <strong>styles/themes</strong>.', // Don't replace {x}
 	'confirm_template_deletion' => '¿Seguro que desea borrar la plantilla <strong>{x}</strong>?<br /><br />La plantilla se eliminará de su directorio <strong>styles/templates</strong>.', // Don't replace {x}
+	'unable_to_enable_addon' => 'Could not enable addon. Please ensure it is a valid NamelessMC addon.',
 	
 	// Admin Misc page
 	'other_settings' => 'Otra configuración',
@@ -448,11 +457,12 @@ $user_language = array(
 	'location_required' => 'Por favor, introduzca una ubicación.',
 	'location_minimum_2' => 'Su ubicación debe ser de un mínimo de 2 caracteres.',
 	'location_maximum_128' => 'Su ubicación debe ser un máximo de 128 caracteres.',
-	'verify_account' => 'Verify account',
+	'verify_account' => 'Verificar Cuenta',
 	'verify_account_help' => 'Por favor, sigue las instrucciones mostradas a continuación para que podamos verificar que eres el dueño de la cuenta de Minecraft.',
 	'verification_failed' => 'Verificación fallida, Por favor inténtalo de nuevo.',
 	'verification_success' => 'Cuenta verificada correctamente, Ya puedes iniciar sesión.',
-	'complete_signup' => 'Complete Signup',
+	'complete_signup' => 'Completar Registro',
+	'registration_disabled' => 'Website registration is currently disabled.',
 	
 	// UserCP
 	'user_cp' => 'Panel Usuario',
@@ -569,12 +579,12 @@ $user_language = array(
 	'post_unliked' => 'Mensajes no asociados.',
 	'no_posts' => 'No hay mensajes.',
 	'last_5_posts' => 'Últimos 5 mensajes.',
-	'follow' => 'Follow',
-	'unfollow' => 'Unfollow',
-	'name_history' => 'Name History',
-	'changed_name_to' => 'Changed name to: {x} on {y}', // Don't replace {x} or {y}
-	'original_name' => 'Original name:',
-	'name_history_error' => 'Unable to retrieve username history.',
+	'follow' => 'Seguir',
+	'unfollow' => 'Dejar de Seguir',
+	'name_history' => 'Historial de Nombres',
+	'changed_name_to' => 'Nombre Cambiado a: {x} el {y}', // Don't replace {x} or {y}
+	'original_name' => 'Nombre Original:',
+	'name_history_error' => 'Imposible obtener Historial de Nombres.',
 	
 	// Staff applications
 	'staff_application' => 'Solicitud de staff',
@@ -596,8 +606,8 @@ $mod_language = array(
 	'staff_applications' => 'Solicitud de staff',
 	
 	// Punishments
-	'ban' => 'Ban',
-	'unban' => 'Unban',
+	'ban' => 'Banear',
+	'unban' => 'Desbanear',
 	'warn' => 'Advertir',
 	'search_for_a_user' => 'Buscar a un usuario',
 	'user' => 'Usuario:',
@@ -613,7 +623,7 @@ $mod_language = array(
 	'new_comment' => 'Nuevo comentario',
 	'comments' => 'Comentarios',
 	'only_viewed_by_staff' => 'Sólo puede ser visto por los administradores',
-	'reported_by' => 'Reportado	por',
+	'reported_by' => 'Reportado por',
 	'close_issue' => 'Cerrar tema',
 	'report' => 'Reporte:',
 	'view_reported_content' => 'Ver contenido del reporte',
@@ -625,7 +635,7 @@ $mod_language = array(
 	'user_profile' => 'Perfil del usuario',
 	'comment_added' => 'Comentario añadido.',
 	'new_report_submitted_alert' => 'Nuevo reporte presentado por {x} especto al usuario {y}', // Don't replace "{x}" or "{y}"
-	'ingame_report' => 'Ingame Report',
+	'ingame_report' => 'Reporte de Juego',
 	
 	// Staff applications
 	'comment_error' => 'Tu comentario debe tener entre 2 y 2048 caracteres.',
@@ -676,7 +686,7 @@ $general_language = array(
 	'offline' => 'Desconectado',
 	'status' => 'Estado:',
 	'players_online' => 'Jugadores conectados:',
-	'queried_in' => 'Ping:',
+	'queried_in' => 'Conexión:',
 	'server_status' => 'Estado del servidor',
 	'no_players_online' => '¡No hay jugadores conectados!',
 	'x_players_online' => 'Hay {x} jugadores conectados.', // Don't replace {x}
@@ -757,7 +767,7 @@ $forum_language = array(
 	'topic_created' => 'Tema creado.',
 	'creating_topic_in_' => 'Creando tema en el foro ',
 	'thread_title' => 'Título del tema',
-	'confirm_cancellation' => '¿seguro?',
+	'confirm_cancellation' => '¿Está Seguro de Realizar esta Acción?',
 	'label' => 'Etiqueta',
 	
 	// Reports

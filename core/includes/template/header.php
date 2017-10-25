@@ -9,11 +9,13 @@
 /*
  *  Create page header (which css to load)
  */
+
+// Page title first
+echo '<title>' . str_replace('&amp;', '&', $title) . ' &bull; ' . $sitename . '</title>';
  
 /*
  *  Check to see if the theme actually exists..
  */
-
 if(!is_dir('styles/themes/' . $theme_result)){
 	// Doesn't exist
 	// Display an error
@@ -23,6 +25,7 @@ if(!is_dir('styles/themes/' . $theme_result)){
 	echo '<link href="' . PATH . 'styles/themes/Bootstrap/css/bootstrap.min.css" rel="stylesheet">' . PHP_EOL;
 	echo '<link href="' . PATH . 'styles/themes/Bootstrap/css/custom.css" rel="stylesheet">' . PHP_EOL;
 	echo '<link href="' . PATH . 'styles/themes/Bootstrap/css/font-awesome.min.css" rel="stylesheet">' . PHP_EOL;
+	
 } else {
 	// Exists
 	// Load the css
@@ -34,9 +37,7 @@ if(!is_dir('styles/themes/' . $theme_result)){
 // Global
 echo '<link href="' . PATH . 'core/assets/css/toastr.css" rel="stylesheet">' . PHP_EOL;
 echo '<link href="' . PATH . 'core/assets/css/custom_core.css" rel="stylesheet">' . PHP_EOL;
-echo '<link href="' . PATH . 'styles/themes/Tropical/css/tropical.css" rel="stylesheet">' . PHP_EOL;
 echo '<link rel="icon" href="' . PATH . 'core/assets/favicon.ico">';
-echo '<title>' . $sitename . '</title>' . PHP_EOL;
 
 // Custom
 foreach($custom_css as $item){

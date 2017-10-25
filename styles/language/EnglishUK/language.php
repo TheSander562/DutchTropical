@@ -15,7 +15,7 @@
  */
 $admin_language = array(
 	// General terms
-	'admin_cp' => 'Admin',
+	'admin_cp' => 'AdminCP',
 	'infractions' => 'Infractions',
 	'invalid_token' => 'Invalid token, please try again.',
 	'invalid_action' => 'Invalid action',
@@ -135,6 +135,12 @@ $admin_language = array(
 	'dropdown' => 'Dropdown',
 	'text' => 'Text',
 	'textarea' => 'Text Area',
+	'name_required' => 'Name is required.',
+	'question_required' => 'Question is required.',
+	'name_minimum' => 'Name must be a minimum of 2 characters.',
+	'question_minimum' => 'Question must be a minimum of 2 characters.',
+	'name_maximum' => 'Name must be a maximum of 16 characters.',
+	'question_maximum' => 'Question must be a maximum of 16 characters.',
 	'question_deleted' => 'Question Deleted',
 	'use_followers' => 'Use followers?',
 	'use_followers_help' => 'If disabled, the friends system will be used.',
@@ -165,6 +171,7 @@ $admin_language = array(
 	'can_view_page' => 'Can view page:',
 	'redirect_page' => 'Redirect page?',
 	'redirect_link' => 'Redirect link',
+	'page_icon' => 'Page Icon',
 	
 	// Admin forum page
 	'labels' => 'Topic Labels',
@@ -261,7 +268,7 @@ $admin_language = array(
 	'use_plugin' => 'Enable Nameless API?',
 	'force_avatars' => 'Force Minecraft avatars?',
 	'uuid_linking' => 'Enable UUID linking?',
-	'use_plugin_help' => 'Enabling the API, along with the upcoming server plugin, allows for rank synchronisation and also ingame registration and report submission.',
+	'use_plugin_help' => 'Enabling the API, along with the server plugin, allows for rank synchronisation and also ingame registration and report submission.',
 	'uuid_linking_help' => 'If disabled, user accounts won\'t be linked with UUIDs. It is highly recommended you keep this as enabled.',
 	'plugin_settings' => 'Plugin Settings',
 	'confirm_api_regen' => 'Are you sure you want to generate a new API key?',
@@ -311,6 +318,7 @@ $admin_language = array(
 	'mcassoc_instance' => 'mcassoc Instance',
 	'mcassoc_instance_help' => 'Generate an instance code <a href="http://jsbin.com/jadofehoqu/1/" target="_blank">here</a>',
 	'mcassoc_key_help' => 'Get your mcassoc key <a href="https://mcassoc.lukegb.com/" target="_blank">here</a>',
+	'enable_name_history' => 'Enable profile username history?',
 	
 	// Admin Themes, Templates and Addons
 	'themes' => 'Themes',
@@ -346,6 +354,7 @@ $admin_language = array(
 	'inverse_navbar' => 'Inverse Navbar',
 	'confirm_theme_deletion' => 'Are you sure you wish to delete the theme <strong>{x}</strong>?<br /><br />The theme will be deleted from your <strong>styles/themes</strong> directory.', // Don't replace {x}
 	'confirm_template_deletion' => 'Are you sure you wish to delete the template <strong>{x}</strong>?<br /><br />The template will be deleted from your <strong>styles/templates</strong> directory.', // Don't replace {x}
+	'unable_to_enable_addon' => 'Could not enable addon. Please ensure it is a valid NamelessMC addon.',
 	
 	// Admin Misc page
 	'other_settings' => 'Other Settings',
@@ -450,9 +459,10 @@ $user_language = array(
 	'verification_failed' => 'Verification failed, please try again.',
 	'verification_success' => 'Successfully validated! You can now log in.',
 	'complete_signup' => 'Complete Signup',
+	'registration_disabled' => 'Website registration is currently disabled.',
 	
 	// UserCP
-	'user_cp' => 'Settings',
+	'user_cp' => 'UserCP',
 	'no_file_chosen' => 'No file chosen',
 	'private_messages' => 'Private Messages',
 	'profile_settings' => 'Profile Settings',
@@ -548,8 +558,8 @@ $user_language = array(
 	'find_a_user' => 'Find a user',
 	'user_not_following' => 'This user does not follow anyone.',
 	'user_no_followers' => 'This user has no followers.',
-	'following' => 'FOLLOWING',
-	'followers' => 'FOLLOWERS',
+	'following' => 'Following',
+	'followers' => 'Followers',
 	'display_location' => 'From {x}.', // Don't replace {x}, which will be the user's location
 	'display_age_and_location' => '{x}, from {y}.', // Don't replace {x} which will be the user's age, and {y} which will be their location
 	'write_on_user_profile' => 'Write something on {x}\'s profile...', // Don't replace {x}
@@ -586,7 +596,7 @@ $user_language = array(
  *  Moderation related
  */
 $mod_language = array(
-	'mod_cp' => 'Moderate',
+	'mod_cp' => 'ModCP',
 	'overview' => 'Overview',
 	'reports' => 'Reports',
 	'punishments' => 'Punishments',

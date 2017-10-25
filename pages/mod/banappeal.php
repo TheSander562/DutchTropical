@@ -1,12 +1,19 @@
 <?php 
 /* 
- *	Made by Partydragen
+ *  Made by Partydragen And Samerton
  *  http://partydragen.com/
  *
  */
+
+// page for ModCP sidebar
+$mod_page = 'banappeal';
+
+require('addons/BanAppeal/BanAppeal.php');
+$banappeal = new BanAppeal();
+
 // Mod check
 if($user->isLoggedIn()){
-	if(!$user->canViewMCP($user->data()->id)){
+	if(!$user->canViewMCP($user->data()->id) || !$banappeal->canViewBanAppeal($user->data()->id)){
 		Redirect::to('/');
 		die();
 	}
@@ -14,11 +21,6 @@ if($user->isLoggedIn()){
 	Redirect::to('/');
 	die();
 }
-// page for ModCP sidebar
-$mod_page = 'banappeal';
-
-require('addons/BanAppeal/BanAppeal.php');
-$banappeal = new BanAppeal();
 
 if(isset($_GET['app'])){
 	// Does the ban appeal exist?
@@ -122,7 +124,7 @@ require('core/includes/htmlpurifier/HTMLPurifier.standalone.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Moderator panel">
-    <meta name="author" content="Samerton">
+    <meta name="author" content="<?php echo $sitename; ?>">
 	<meta name="robots" content="noindex">
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
 	

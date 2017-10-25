@@ -431,14 +431,14 @@ $token = Token::generate();
 			  ?>
 			  <div class="form-group">
 				<label for="InputScreenName"><?php echo $user_language['display_name']; ?></label>
-				<input type="text" name="screenname" class="form-control input-lg" id="InputScreenName" value="<?php echo htmlspecialchars($user->data()->username); ?>">
+				<input type="text" name="screenname" class="form-control" id="InputScreenName" value="<?php echo htmlspecialchars($user->data()->username); ?>">
 			  </div>
 			  <?php
 			  }
 			  ?>
 			  <div class="form-group">
 				<label for="InputLocation"><?php echo $user_language['location']; ?></label>
-				<input type="text" name="location" class="form-control input-lg" id="InputLocation" value="<?php echo htmlspecialchars($user->data()->location); ?>">
+				<input type="text" name="location" class="form-control" id="InputLocation" value="<?php echo htmlspecialchars($user->data()->location); ?>">
 			  </div>
 			  <?php
 			  // Birthday - only if not already inputted
@@ -481,15 +481,15 @@ $token = Token::generate();
 			  <h4><?php echo $user_language['change_password']; ?></h4>
 			  <div class="form-group">
 				<label for="InputOldPassword"><?php echo $user_language['current_password']; ?></label>
-				<input type="password" name="old_password" class="form-control input-lg" id="InputOldPassword" placeholder="<?php echo $user_language['current_password']; ?>">
+				<input type="password" name="old_password" class="form-control" id="InputOldPassword" placeholder="<?php echo $user_language['current_password']; ?>">
 			  </div>
 			  <div class="form-group">
 				<label for="InputNewPassword"><?php echo $user_language['new_password']; ?></label>
-				<input type="password" name="new_password" class="form-control input-lg" id="InputNewPassword" placeholder="<?php echo $user_language['new_password']; ?>">
+				<input type="password" name="new_password" class="form-control" id="InputNewPassword" placeholder="<?php echo $user_language['new_password']; ?>">
 			  </div>
 			  <div class="form-group">
 				<label for="InputNewPasswordAgain"><?php echo $user_language['repeat_new_password']; ?></label>
-				<input type="password" name="new_password_again" class="form-control input-lg" id="InputNewPasswordAgain" placeholder="<?php echo $user_language['repeat_new_password']; ?>">
+				<input type="password" name="new_password_again" class="form-control" id="InputNewPasswordAgain" placeholder="<?php echo $user_language['repeat_new_password']; ?>">
 			  </div>
 			  <input type="hidden" name="token" value="<?php echo $token; ?>" />
 			  <input type="hidden" name="action" value="password" />
@@ -518,7 +518,7 @@ $token = Token::generate();
 			  </div>
 			  <div class="form-group">
 			    <label for="tfa_type"><?php echo $user_language['tfa_type']; ?></label>
-			    <select class="form-control list" name="tfa_type" id="tfa_type">
+			    <select class="form-control" name="tfa_type" id="tfa_type">
 				  <option value="2"<?php if($user->data()->tfa_type == 0) echo ' selected'; ?>><?php echo $user_language['email']; ?></option>
 				  <option value="1"<?php if($user->data()->tfa_type == 1) echo ' selected'; ?>><?php echo $user_language['authenticator_app']; ?></option>
 				</select>
@@ -573,12 +573,10 @@ $token = Token::generate();
 	<script src="/core/assets/js/ckeditor.js"></script>
 	
 	<script src="/core/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-	<script type="text/javascript" src="/core/assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.nl.min.js" charset="UTF-8"></script>
 
 	<script type="text/javascript">
 		$('.datepicker').datepicker({
-			orientation: 'bottom',
-			language: 'nl'
+			orientation: 'bottom'
 		});
 	
 		CKEDITOR.replace( 'signature', {
@@ -595,6 +593,7 @@ $token = Token::generate();
 			// Remove the redundant buttons from toolbar groups defined above.
 			removeButtons: 'Anchor,Styles,Specialchar,Font,About,Flash,Iframe'
 		} );
+		CKEDITOR.timestamp = '2';
 		CKEDITOR.config.disableNativeSpellChecker = false;
 	</script>
   </body>

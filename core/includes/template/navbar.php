@@ -20,9 +20,7 @@ if($inverse_navbar == 1){
 /*
  *  Any messages or alerts?
  */
-?>
-<!-- PRIME v1.5.1 -->
-<?php
+
  
 // Main navbar
 $main_navbar = array(
@@ -58,29 +56,38 @@ foreach($navbar_array as $item){
 
 // Custom pages
 $custom_pages = $queries->getWhere('custom_pages', array('url', '<>', ''));
+if(!isset($nav_more_dropdown)) $nav_more_dropdown = array();
+
 foreach($custom_pages as $item){
 	if($item->link_location == 1){
 		$navbar_links .= '<li';
-		if(isset($page) && $page == $item->title){
+		
+		if(isset($page) && $page == $item->title)
 			$navbar_links .= ' class="active"';
-		}
-		$navbar_links .= '><a href="' . htmlspecialchars($item->url) . '">' . $item->title . '</a></li>';
-	} else if($item->link_location == 2){
-		// More dropdown
-		$nav_more_dropdown[$item->title] = $item->url;
-	}
+		
+		if(isset($item->icon))
+        	$navbar_links .= '><a href="' . htmlspecialchars($item->url) . '">' . $item->icon . ' ' . $item->title . '</a></li>';
+        else
+        	$navbar_links .= '><a href="' . htmlspecialchars($item->url) . '">' . $item->title . '</a></li>';
+
+    } else if($item->link_location == 2)
+    	$nav_more_dropdown[] = $item;
 }
 
 // More dropdown
 if(isset($nav_more_dropdown) && !empty($nav_more_dropdown)){
 	$navbar_links .= '<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $navbar_language['more'] . ' <span class="caret"></span></a>
-						  <ul class="dropdown-menu">';
-	
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $navbar_language['more'] . ' <span class="caret"></span></a>
+	<ul class="dropdown-menu">';
+
 	foreach($nav_more_dropdown as $key => $item){
-		$navbar_links .= '<li><a href="' . htmlspecialchars($item) . '">' . $key . '</a></li>';
+		if(isset($item->icon)) {
+			$navbar_links .= '<li><a href="' . htmlspecialchars($item->url) . '">' . $item->icon . ' ' . $item->title . '</a></li>';
+		} else {
+			$navbar_links .= '<li><a href="' . htmlspecialchars($item->url) . '">' . $item->title . '</a></li>';
+		}
 	}
-	
+
 	$navbar_links .= '</ul></li>';
 }
 
@@ -142,7 +149,7 @@ if($user->isLoggedIn()){
 		if($user->canViewACP($user->data()->id)){
 			$user_area .= '<li><a href="/admin">' . $admin_language['admin_cp'] . '</a></li>';
 		}
-		if($user->canViewACP($user->data()->id)){
+		if(isset($infractions_language) && $user->canViewACP($user->data()->id)){
 			$user_area .= '<li class="divider"></li><li><a href="/infractions">' . $admin_language['infractions'] . '</a></li>';
 		}
 		$user_area .= '<li class="divider"></li>

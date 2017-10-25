@@ -35,7 +35,7 @@ if($user->isLoggedIn()){
 <?php if(!isset($_GET['view']) && !isset($_GET['do'])){ ?>  
 <h3>Addon: Donate</h3>
 Author: Samerton<br />
-Version: 1.1.0<br />
+Version: 1.1.2<br />
 Description: Integrate a donation store with your website<br />
 
 <h3>Donation Store</h3>
@@ -93,7 +93,7 @@ if(empty($donation_settings)){
 			
 			$validation = $validate->check($_POST, array(
 				'api_key' => array(
-					'max' => 40
+					'max' => 60
 				)
 			));
 			
@@ -129,6 +129,10 @@ if(empty($donation_settings)){
 					'value' => Input::get('currency')
 				));
 				
+				// Link location
+				$c->setCache('donateaddon');
+				$c->store('linklocation', htmlspecialchars(Input::get('linkposition')));
+				
 				// Query again because settings updated
 				// Get settings from database
 				$donation_settings = $queries->getWhere('donation_settings', array('id', '<>', 0));
@@ -156,6 +160,9 @@ if(empty($donation_settings)){
     </label>
     <label class="btn btn-primary<?php if($donation_settings[0]->value == 'mm'){ ?> active<?php } ?>">
 	  <input type="radio" name="store_type" id="InputStoreType2" value="mm" autocomplete="off"<?php if($donation_settings[0]->value == 'mm'){ ?> checked<?php } ?>> Minecraft Market
+    </label>
+    <label class="btn btn-primary<?php if($donation_settings[0]->value == 'cs'){ ?> active<?php } ?>">
+	  <input type="radio" name="store_type" id="InputStoreType3" value="cs" autocomplete="off"<?php if($donation_settings[0]->value == 'cs'){ ?> checked<?php } ?>> CraftingStore
     </label>
   </div>
   <br /><br />
@@ -192,6 +199,25 @@ if(empty($donation_settings)){
 	  <option value="1" <?php if($donation_settings[5]->value == '1'){ echo ' selected="selected"'; } ?>>£</option>
 	  <option value="2" <?php if($donation_settings[5]->value == '2'){ echo ' selected="selected"'; } ?>>€</option>
 	  <option value="3" <?php if($donation_settings[5]->value == '3'){ echo ' selected="selected"'; } ?>>R$</option>
+	</select>
+  </div>
+  <div class="form-group">
+	<label for="InputLinkPosition"><?php echo $admin_language['page_link_location']; ?></label>
+	<?php
+	// Get position of link
+	$c->setCache('donateaddon');
+	if($c->isCached('linklocation')){
+		$link_location = $c->retrieve('linklocation');
+	} else {
+		$c->store('linklocation', 'navbar');
+		$link_location = 'navbar';
+	}
+	?>
+	<select name="linkposition" id="InputLinkPosition" class="form-control">
+	  <option value="navbar" <?php if($link_location == 'navbar'){ echo 'selected="selected"'; } ?>><?php echo $admin_language['page_link_navbar']; ?></option>
+	  <option value="more" <?php if($link_location == 'more'){ echo 'selected="selected"'; } ?>><?php echo $admin_language['page_link_more']; ?></option>
+	  <option value="footer" <?php if($link_location == 'footer'){ echo 'selected="selected"'; } ?>><?php echo $admin_language['page_link_footer']; ?></option>
+	  <option value="none" <?php if($link_location == 'none'){ echo 'selected="selected"'; } ?>><?php echo $admin_language['page_link_none']; ?></option>
 	</select>
   </div>
   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
@@ -317,6 +343,7 @@ if(empty($donation_settings)){
 						// Remove the redundant buttons from toolbar groups defined above.
 						removeButtons: 'Anchor,Styles,Specialchar,Font,About,Flash,Iframe'
 					} );
+					CKEDITOR.config.disableNativeSpellChecker = false;
 					CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
 				</script>
 					<?php
@@ -356,9 +383,12 @@ if(empty($donation_settings)){
 	<br />
 	<code>http://<?php echo $_SERVER['SERVER_NAME']; ?>/addons/Donate/sync.php?key=<?php echo $unique_key; ?></code>
 	<br /><br />
+	<strong>for example</strong> (will run every 20 minutes):<br />
+	<code>wget --spider "http://<?php echo $_SERVER['SERVER_NAME']; ?>/addons/Donate/sync.php?key=<?php echo $unique_key; ?>" >/dev/null 2>&1</code>
+	<br /><br />
 	<strong>Please keep the above URL a secret!</strong>
 	<br /><br />
-	To avoid using the API too often, please leave a reasonable time period between running the cron job.
+	To avoid using the API too often, please leave a reasonable time period between running the cron job, such as 20 minutes.
 	
 	<!-- Modal -->
 	<div class="modal fade" data-keyboard="false" data-backdrop="static" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="loadingModalLabel" aria-hidden="true">

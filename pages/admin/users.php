@@ -69,18 +69,18 @@ require('core/integration/uuid.php');
   </head>
 
   <body>
-    <?php
-	  // "Users" page
-	  // Load navbar
-	  $smarty->display('styles/templates/' . $template . '/navbar.tpl');
+	<?php
+	// "Users" page
+	// Load navbar
+	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
 	  
-	  echo '<br />';
+	echo '<br />';
 
-	  if(Session::exists('adm-alert')){
+	if(Session::exists('adm-alert')){
 		echo Session::flash('adm-alert');
-	  }
-	  ?>
-    <div class="container">	
+	}
+	?>
+    <div class="container">
 	  <div class="row">
 		<div class="col-md-3">
 		  <?php require('pages/admin/sidebar.php'); ?>
@@ -261,7 +261,8 @@ require('core/integration/uuid.php');
 										'joined' => $date,
 										'group_id' => Input::get('group'),
 										'email' => htmlspecialchars(Input::get('email')),
-										'active' => 1
+										'active' => 1,
+										'lastip' => 'none'
 									));
 									echo '<script data-cfasync="false">window.location.replace("/admin/users/");</script>';
 									die();
@@ -538,7 +539,7 @@ require('core/integration/uuid.php');
 											'username' => htmlspecialchars(Input::get('username')),
 											'email' => htmlspecialchars(Input::get('email')),
 											'group_id' => Input::get('group'),
-											'mcname' => htmlspecialchars(Input::get('MCUsername')),
+											'mcname' => $mcname,
 											'uuid' => htmlspecialchars(Input::get('UUID')),
 											'user_title' => Input::get('title'),
 											'signature' => htmlspecialchars($signature),
@@ -854,6 +855,7 @@ require('core/integration/uuid.php');
 			// Remove the redundant buttons from toolbar groups defined above.
 			removeButtons: 'Anchor,Styles,Specialchar,Font,About,Flash,Iframe'
 		} );
+		CKEDITOR.timestamp = '2';
 		CKEDITOR.config.disableNativeSpellChecker = false;
 		CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
 	</script>

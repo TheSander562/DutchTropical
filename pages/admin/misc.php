@@ -96,13 +96,12 @@ if(Input::exists()){
 	
   </head>
   <body>
-	  <?php
-	  // Index page
-	  // Load navbar
-	  $smarty->display('styles/templates/' . $template . '/navbar.tpl');
-	  ?>
-      <div class="container">
-
+	<?php
+	// Misc page
+	// Load navbar
+	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
+	?>
+    <div class="container">
 	  <br />
 	  <div class="row">
 	    <div class="col-md-3">

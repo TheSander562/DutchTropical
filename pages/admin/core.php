@@ -56,11 +56,11 @@ $adm_page = "core";
 	
   </head>
   <body>
-    	  <?php
-	  // "Core" page
-	  // Load navbar
-	  $smarty->display('styles/templates/' . $template . '/navbar.tpl');
-	  ?>
+	<?php
+	// "Core" page
+	// Load navbar
+	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
+	?>
     <div class="container">
 	  <br />
 	  <div class="row">
@@ -766,14 +766,62 @@ $adm_page = "core";
 											Session::flash('apps_post_success', '<div class="alert alert-info">' . $admin_language['successfully_updated'] . '</div>');
 											echo '<script data-cfasync="false">window.location.replace(\'/admin/core/?view=modules&action=edit&module=Staff_Applications\');</script>';
 											die();
+										}  else {
+											// errors
+											$error = array();
+											foreach($validation->errors() as $item){
+												if(strpos($item, 'is required') !== false){
+													switch($item){
+														case (strpos($item, 'name') !== false):
+															$error[] = $admin_language['name_required'];
+														break;
+														case (strpos($item, 'question') !== false):
+															$error[] = $admin_language['question_required'];
+														break;
+													}
+												} else if(strpos($item, 'minimum') !== false){
+													switch($item){
+														case (strpos($item, 'name') !== false):
+															$error[] = $admin_language['name_minimum'];
+														break;
+														case (strpos($item, 'question') !== false):
+															$error[] = $admin_language['question_minimum'];
+														break;
+													}
+												} else if(strpos($item, 'maximum') !== false){
+													switch($item){
+														case (strpos($item, 'name') !== false):
+															$error[] = $admin_language['name_maximum'];
+														break;
+														case (strpos($item, 'question') !== false):
+															$error[] = $admin_language['question_maximum'];
+														break;
+													}
+												}
+											}
 										}
 								
 									} else {
 										// Invalid token
+										$error[] = $admin_language['invalid_token'];
 									}
 								}
 						
 								$question = $question[0];
+						?>
+						<!-- Errors? Display here -->
+						<?php
+						if(isset($error)){
+						?>
+						<div class="alert alert-danger">
+						<?php
+							foreach($error as $item){
+								echo $item . '<br />';
+							}
+						?>
+						</div>
+						<?php
+						}
 						?>
 						<strong><?php echo $admin_language['editing_question']; ?></strong>
 						<span class="pull-right"><a href="/admin/core/?view=modules&amp;action=edit&amp;module=Staff_Applications&amp;question=<?php echo $question->id; ?>&amp;module_action=delete" onclick="return confirm('<?php echo $forum_language['confirm_cancellation']; ?>');" class="btn btn-danger"><?php echo $admin_language['delete_question']; ?></a></span>
@@ -844,13 +892,59 @@ $adm_page = "core";
 											die();
 										} else {
 											// errors
+											$error = array();
+											foreach($validation->errors() as $item){
+												if(strpos($item, 'is required') !== false){
+													switch($item){
+														case (strpos($item, 'name') !== false):
+															$error[] = $admin_language['name_required'];
+														break;
+														case (strpos($item, 'question') !== false):
+															$error[] = $admin_language['question_required'];
+														break;
+													}
+												} else if(strpos($item, 'minimum') !== false){
+													switch($item){
+														case (strpos($item, 'name') !== false):
+															$error[] = $admin_language['name_minimum'];
+														break;
+														case (strpos($item, 'question') !== false):
+															$error[] = $admin_language['question_minimum'];
+														break;
+													}
+												} else if(strpos($item, 'maximum') !== false){
+													switch($item){
+														case (strpos($item, 'name') !== false):
+															$error[] = $admin_language['name_maximum'];
+														break;
+														case (strpos($item, 'question') !== false):
+															$error[] = $admin_language['question_maximum'];
+														break;
+													}
+												}
+											}
 										}
 										
 									} else {
 										// Invalid token
+										$error[] = $admin_language['invalid_token'];
 									}
 								}
 
+						?>
+						<!-- Errors? Display here -->
+						<?php
+						if(isset($error)){
+						?>
+						<div class="alert alert-danger">
+						<?php
+							foreach($error as $item){
+								echo $item . '<br />';
+							}
+						?>
+						</div>
+						<?php
+						}
 						?>
 						<strong><?php echo $admin_language['new_question']; ?></strong><br /><br />
 						
@@ -959,7 +1053,7 @@ $adm_page = "core";
 										$input_string = '<?php' . PHP_EOL . 
 														'$GLOBALS[\'email\'] = array(' . PHP_EOL .
 														'    \'username\' => \'' . str_replace('\'', '\\\'', (isset($_POST['username']) ? $_POST['username'] : $GLOBALS['email']['username'])) . '\',' . PHP_EOL .
-														'    \'password\' => \'' . str_replace('\'', '\\\'', (isset($_POST['password']) ? $_POST['password'] : $GLOBALS['email']['password'])) . '\',' . PHP_EOL .
+														'    \'password\' => \'' . str_replace('\'', '\\\'', ((isset($_POST['password']) && !empty($_POST['password'])) ? $_POST['password'] : $GLOBALS['email']['password'])) . '\',' . PHP_EOL .
 														'    \'name\' => \'' . str_replace('\'', '\\\'', (isset($_POST['name']) ? $_POST['name'] : $GLOBALS['email']['name'])) . '\',' . PHP_EOL .
 														'    \'host\' => \'' . str_replace('\'', '\\\'', (isset($_POST['host']) ? $_POST['host'] : $GLOBALS['email']['host'])) . '\',' . PHP_EOL .
 														'    \'port\' => ' . str_replace('\'', '\\\'', $GLOBALS['email']['port']) . ',' . PHP_EOL .
@@ -1019,15 +1113,15 @@ $adm_page = "core";
 				<hr />
 				<p><?php echo $admin_language['explain_email_settings']; ?></p>
 				<div class="form-group">
-				  <label for="inputUsername">Gebruikersnaam</label>
+				  <label for="inputUsername">Username</label>
 				  <input class="form-control" type="text" name="username" value="<?php echo htmlspecialchars($GLOBALS['email']['username']); ?>" id="inputUsername">
 				</div>
 				<div class="form-group">
-				  <label for="inputPassword">Wachtwoord</label>
+				  <label for="inputPassword">Password</label>
 				  <input class="form-control" type="password" name="password" id="inputPassword">
 				</div>
 				<div class="form-group">
-				  <label for="inputName">Naam</label>
+				  <label for="inputName">Name</label>
 				  <input class="form-control" type="text" name="name" value="<?php echo htmlspecialchars($GLOBALS['email']['name']); ?>" id="inputName">
 				</div>
 				<div class="form-group">
@@ -1038,8 +1132,6 @@ $adm_page = "core";
 				<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 				<input type="submit" class="btn btn-primary" value="<?php echo $general_language['submit']; ?>">
 			  </form>
-	  
-			  
 				<?php
 				} else if($_GET['view'] == 'pages'){
 					// Pages

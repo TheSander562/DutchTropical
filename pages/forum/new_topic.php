@@ -113,8 +113,8 @@ if(Input::exists()) {
 			Session::flash('failure_post', '<div class="alert alert-danger alert-dismissable"> <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>' . $error_string . '</div>');
 		}
 	} else {
-		Redirect::to("/forum");
-		die();
+		// Invalid token
+		Session::flash('failure_post', '<div class="alert alert-danger">' . $admin_language['invalid_token'] . '</div>');
 	}
 }
 
@@ -153,19 +153,17 @@ $token = Token::generate();
 	<?php
 	// Load navbar
 	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
-	?>
-<section id="new_topic">
-    <?php
+	
 	// Generate content for template
 	if(Session::exists('failure_post')){
       $smarty->assign('SESSION', Session::flash('failure_post'));
 	} else {
 	  $smarty->assign('SESSION', '');
 	}
-      
+	
 	$creating_topic_in = $forum_language['creating_topic_in_'] . htmlspecialchars($forum->getForumTitle($fid));
 	$smarty->assign('CREATING_TOPIC_IN', $creating_topic_in);
-
+	
 	// Get labels available
 	$labels = '<h4 style="display:inline;">';
 	$labels_query = $queries->getWhere('forums_topic_labels', array('id', '<>', 0));
@@ -202,9 +200,7 @@ $token = Token::generate();
 	
 	// Display template
 	$smarty->display('styles/templates/' . $template . '/forum_create_topic.tpl');
-?>
-</section>
-<?php
+
 	// Footer
 	require('core/includes/template/footer.php');
 	$smarty->display('styles/templates/' . $template . '/footer.tpl');
@@ -212,7 +208,7 @@ $token = Token::generate();
 	// Scripts 
 	require('core/includes/template/scripts.php');
 	?>
-
+	
 	<script src="/core/assets/js/ckeditor.js"></script>
 	<script type="text/javascript">
 		CKEDITOR.replace( 'reply', {

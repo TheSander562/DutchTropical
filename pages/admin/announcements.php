@@ -59,11 +59,11 @@ require('core/includes/htmlpurifier/HTMLPurifier.standalone.php'); // HTML Purif
 	
   </head>
   <body>
-    <?php
-	  // Index page
-	  // Load navbar
-	  $smarty->display('styles/templates/' . $template . '/navbar.tpl');
-	  ?>
+	<?php
+	// Announcements page
+	// Load navbar
+	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
+	?>
     <div class="container">
 	  <br />
 	  <div class="row">

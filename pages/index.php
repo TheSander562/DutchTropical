@@ -88,19 +88,14 @@ if($pre17 == 0){
 $smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_language['x_players_online']));
 ?>
 <!DOCTYPE html>
-<html lang="en-EN">
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="De beste nederlandse minetopia">
-    <meta name="author" content="Symon">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <title><?php echo $sitename;?></title>  
+    <meta name="description" content="The homepage for the <?php echo $sitename; ?> community">
+    <meta name="author" content="<?php echo $sitename; ?>">
+    <meta name="theme-color" content="#454545" />
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
 	
 	<?php
@@ -115,6 +110,14 @@ $smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_lan
 	<style>
 	html {
 		overflow-y: scroll;
+	}
+	.jumbotron {
+		margin-bottom: 0px;
+		background-image: url(core/assets/img/background-1920x828.jpg);
+		background-position: 0% 25%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: white;
 	}
 	</style>
 	
@@ -169,7 +172,8 @@ $smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_lan
 			'author_mcname' => htmlspecialchars($user->idToMCName($item['author'])),
 			'author_username' => htmlspecialchars($user->idToName($item['author'])),
 			'author_avatar' => $avatar,
-			'content' => $purifier->purify(htmlspecialchars_decode($item['content']))
+			'content' => $purifier->purify(htmlspecialchars_decode($item['content'])),
+			'group' => $user->getGroup($item['author'], true)
 		);
 	}
 
