@@ -11,9 +11,9 @@
 // Language file for "members" addon
 
 $members_language = array(
-	'members' => 'Members',
+	'members' => 'Leden',
 	'members_icon' => '', // Icon to display before the text in the navbar
-	'username' => 'Username',
-	'group' => 'Group',
-	'created' => 'Joined',
+	'username' => 'Gebruikersnaam',
+	'group' => 'Groep/Rank',
+	'created' => 'Geregistreerd',
 );

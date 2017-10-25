@@ -180,6 +180,7 @@ $page = 'play'; // for navbar
 		$server_status_string .= '<hr>';
 	}
 	
+	$version = json_decode( file_get_contents( 'http://mcapi.ca/query/play.dutchtropicalmt.nl:25597/info' ), true ); 
 	$smarty->assign('SERVER_STATUS', $server_status_string);
 	
 	// Language variables
@@ -187,7 +188,6 @@ $page = 'play'; // for navbar
 	$smarty->assign('ONLINE', $general_language['online']);
 	$smarty->assign('OFFLINE', $general_language['offline']);
 	$smarty->assign('PLAYERS_ONLINE', $general_language['players_online']);
-	$smarty->assign('QUERIED_IN', $general_language['queried_in']);
 	
 	$smarty->display('styles/templates/' . $template . '/play.tpl');
 
@@ -198,5 +198,20 @@ $page = 'play'; // for navbar
 	// Scripts 
 	require('core/includes/template/scripts.php');
 	?>
+<script>
+	function copyToClipboard(element) {
+		var $temp = $("<input>")
+		$("body").append($temp);
+		$temp.val($(element).text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+		
+		toastr.options.onclick = function () {};
+		toastr.options.progressBar = true;
+		toastr.options.closeButton = true;
+		toastr.options.positionClass = 'toast-bottom-left'
+		toastr.success('Gekopieerd!');
+	}
+</script>
   </body>
 </html>

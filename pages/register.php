@@ -470,7 +470,7 @@ if(isset($error)){
 // Generate code for page
 $form_content = '
 <div class="form-group">
-	<input type="text" name="username" id="username" autocomplete="off" value="' . escape(Input::get('username')) . '" class="form-control input-lg" placeholder="';
+	<input type="text" name="username" id="username" autocomplete="off" value="' . escape(Input::get('username')) . '" class="form-control width input-lg" placeholder="';
 if($custom_usernames == "false"){ $form_content .= $user_language['minecraft_username']; } else { $form_content .= $user_language['username']; }
 $form_content .= '" tabindex="1">
 </div>
@@ -479,35 +479,35 @@ $form_content .= '" tabindex="1">
 if($custom_usernames !== "false"){
 $form_content .= '
 <div class="form-group">
-	<input type="text" name="mcname" id="mcname" autocomplete="off" class="form-control input-lg" placeholder="' . $user_language['minecraft_username'] . '" tabindex="2">
+	<input type="text" name="mcname" id="mcname" autocomplete="off" class="form-control width input-lg" placeholder="' . $user_language['minecraft_username'] . '" tabindex="2">
 </div>';
 }
 // Continue
 $form_content .= '
 <div class="form-group">
-	<input type="email" name="email" id="email" value="' . escape(Input::get('email')) . '" class="form-control input-lg" placeholder="' . $user_language['email_address'] . '" tabindex="3">
+	<input type="email" name="email" id="email" value="' . escape(Input::get('email')) . '" class="form-control width input-lg" placeholder="' . $user_language['email_address'] . '" tabindex="3">
 </div>
 <div class="row">
 	<div class="col-xs-12 col-sm-6 col-md-6">
 		<div class="form-group">
-			<input type="text" class="form-control input-lg datepicker" name="birthday" id="birthday" placeholder="' . $user_language['date_of_birth'] . '" tabindex="4">
+			<input type="text" class="form-control width input-lg datepicker" name="birthday" id="birthday" placeholder="' . $user_language['date_of_birth'] . '" tabindex="4">
 		</div>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-6">
 		<div class="form-group">
-			<input type="text" name="location" id="location" class="form-control input-lg" placeholder="' . $user_language['location'] . '" tabindex="5">
+			<input type="text" name="location" id="location" class="form-control width input-lg" placeholder="' . $user_language['location'] . '" tabindex="5">
 		</div>
 	</div>
 </div>
 <div class="row">
 	<div class="col-xs-12 col-sm-6 col-md-6">
 		<div class="form-group">
-			<input type="password" name="password" id="password" class="form-control input-lg" placeholder="' . $user_language['password'] . '" tabindex="6">
+			<input type="password" name="password" id="password" class="form-control width input-lg" placeholder="' . $user_language['password'] . '" tabindex="6">
 		</div>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-6">
 		<div class="form-group">
-			<input type="password" name="password_again" id="password_again" class="form-control input-lg" placeholder="' . $user_language['confirm_password'] . '" tabindex="7">
+			<input type="password" name="password_again" id="password_again" class="form-control width input-lg" placeholder="' . $user_language['confirm_password'] . '" tabindex="7">
 		</div>
 	</div>
 </div>

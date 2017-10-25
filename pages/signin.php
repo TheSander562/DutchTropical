@@ -200,12 +200,12 @@ if(Input::exists()){
 // Generate code for page
 $form_content = '
 <div class="form-group">
-	<input type="text" name="username" id="username" autocomplete="off" value="' . escape(Input::get('username')) . '" class="form-control input-lg" placeholder="';
+	<input type="text" name="username" id="username" autocomplete="off" value="' . escape(Input::get('username')) . '" class="form-control width input-lg" placeholder="';
 if($custom_usernames == "false"){ $form_content .= $user_language['minecraft_username']; } else { $form_content .= $user_language['username']; }
 $form_content .= '" tabindex="1">
 </div>' . PHP_EOL . 
 '<div class="form-group">
-    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="' . $user_language['password'] . '" tabindex="2">
+    <input type="password" name="password" id="password" class="form-control width input-lg" placeholder="' . $user_language['password'] . '" tabindex="2">
 </div>' . PHP_EOL . 
 '<div class="row">
 	<div class="col-xs-12 col-md-6">

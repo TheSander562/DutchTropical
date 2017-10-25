@@ -1113,15 +1113,15 @@ $adm_page = "core";
 				<hr />
 				<p><?php echo $admin_language['explain_email_settings']; ?></p>
 				<div class="form-group">
-				  <label for="inputUsername">Username</label>
+				  <label for="inputUsername">Gebruikersnaam</label>
 				  <input class="form-control" type="text" name="username" value="<?php echo htmlspecialchars($GLOBALS['email']['username']); ?>" id="inputUsername">
 				</div>
 				<div class="form-group">
-				  <label for="inputPassword">Password</label>
+				  <label for="inputPassword">Wachtwoord</label>
 				  <input class="form-control" type="password" name="password" id="inputPassword">
 				</div>
 				<div class="form-group">
-				  <label for="inputName">Name</label>
+				  <label for="inputName">Naam</label>
 				  <input class="form-control" type="text" name="name" value="<?php echo htmlspecialchars($GLOBALS['email']['name']); ?>" id="inputName">
 				</div>
 				<div class="form-group">

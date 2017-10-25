@@ -17,7 +17,7 @@ if(!isset($social_media_icons)){
 
 // Generate code for footer navigation
 $footer_nav = '
-<ul class="nav nav-pills dropup">';
+<ul>';
 
 if(isset($page_loading) && $page_loading == '1'){
 	$footer_nav .= '
@@ -38,15 +38,7 @@ foreach($custom_pages as $item){
 	}
 }
 
-$footer_nav .= '
-	<li class="dropdown">
-		<a class="dropdown-toggle" data-toggle="dropdown" href="#">&copy; ' . htmlspecialchars($sitename) . ' ' . date('Y') . '</a>
-		<ul class="dropdown-menu">
-			<li><a href="#" target="_blank">Site software &copy; Samerton</a></li>
-			<li><a href="https://github.com/NamelessMC/Nameless" target="_blank">Source avaliable on GitHub.</a></li>
-		</ul>
-	</li>
-	';
+$footer_nav .= '<a class="dropdown-toggle" data-toggle="dropdown" href="#">&copy; ' . htmlspecialchars($sitename) . ' ' . date('Y') . '</a>';
 
 $footer_nav .= '</ul>';
 

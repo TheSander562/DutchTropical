@@ -37,6 +37,7 @@ if(!is_dir('styles/themes/' . $theme_result)){
 // Global
 echo '<link href="' . PATH . 'core/assets/css/toastr.css" rel="stylesheet">' . PHP_EOL;
 echo '<link href="' . PATH . 'core/assets/css/custom_core.css" rel="stylesheet">' . PHP_EOL;
+echo '<link href="' . PATH . 'styles/themes/Tropical/css/tropical.css" rel="stylesheet">' . PHP_EOL;
 echo '<link rel="icon" href="' . PATH . 'core/assets/favicon.ico">';
 
 // Custom

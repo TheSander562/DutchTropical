@@ -341,14 +341,6 @@ if(isset($profile)){
         html {
             overflow-y: scroll;
         }
-        .jumbotron {
-            margin-bottom: 0px;
-            background-image: url(/core/assets/img/profile.jpg);
-            background-position: 0% 25%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            color: white;
-        }
 		.image_container {
 			/* width: 262.5px;
 			height: 262.5px;*/
@@ -363,6 +355,7 @@ if(isset($profile)){
          $smarty->display('styles/templates/' . $template . '/navbar.tpl');
          ?>
       <br />
+	  <section id="profil">
       <div class="container">
          <?php if(isset($profile)){ ?>
          <div class="row">
@@ -1049,6 +1042,7 @@ if(isset($profile)){
 					 </div>
 					 <?php } ?>
                   </div>
+				</section>  
                 </div>
 				<?php } else { echo $user_language['user_hasnt_registered']; } ?>
             </div>

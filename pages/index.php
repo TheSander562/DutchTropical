@@ -111,14 +111,6 @@ $smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_lan
 	html {
 		overflow-y: scroll;
 	}
-	.jumbotron {
-		margin-bottom: 0px;
-		background-image: url(core/assets/img/background-1920x828.jpg);
-		background-position: 0% 25%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		color: white;
-	}
 	</style>
 	
   </head>
